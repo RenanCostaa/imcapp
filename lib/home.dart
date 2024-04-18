@@ -20,10 +20,32 @@ class _HomeIMCState extends State<HomeIMC> {
       ),
       body: Center(
           child: Column(
-        children: [],
+        children: [
+          Image.asset('images/weight.jpg'),
+          TextField(
+            obscureText: true,
+            decoration: InputDecoration(
+              labelText: 'Altura',
+            ),
+          ),
+          TextField(
+            obscureText: true,
+            decoration: InputDecoration(
+              labelText: 'Peso',
+            ),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                textStyle: const TextStyle(fontSize: 20)),
+            onPressed: () {},
+            child: const Text('Calcular IMC'),
+          )
+        ],
       )),
     );
   }
 
   void _limpaCampos() {}
+
+  _calculaIMC() {}
 }
