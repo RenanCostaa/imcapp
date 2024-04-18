@@ -1,17 +1,21 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 class HomeIMC extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    throw UnimplementedError();
-  }
+  _HomeIMCState createState() => _HomeIMCState();
 }
 
 class _HomeIMCState extends State<HomeIMC> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Calculadora IMC'),
+      ),
+      body: Center(
+          child: Column(
+        children: [],
+      )),
+    );
   }
 }
