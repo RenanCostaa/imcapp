@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 class HomeIMC extends StatefulWidget {
@@ -11,6 +13,10 @@ class _HomeIMCState extends State<HomeIMC> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Calculadora IMC'),
+        actions: [
+          IconButton(
+              icon: const Icon(Icons.replay_outlined), onPressed: _limpaCampos)
+        ],
       ),
       body: Center(
           child: Column(
@@ -18,4 +24,6 @@ class _HomeIMCState extends State<HomeIMC> {
       )),
     );
   }
+
+  void _limpaCampos() {}
 }
