@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'package:imcapp/imc.dart';
 
 class HomeIMC extends StatefulWidget {
   const HomeIMC({super.key});
@@ -67,7 +69,11 @@ class HomeIMCState extends State<HomeIMC> {
   }
 
   _calculaIMC() {
-    double alt = double.parse(_alturaController.text);
-    double pes = double.parse(_pesoController.text);
+    double altura = double.parse(_alturaController.text);
+    double peso = double.parse(_pesoController.text);
+
+    var imc = IMC(altura: altura, peso: peso);
+
+    _pesoController.text = imc.calcImc.toString();
   }
 }
