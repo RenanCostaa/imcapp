@@ -3,7 +3,7 @@ import 'package:imcapp/imc.dart';
 
 class Resultado extends StatefulWidget{
   final IMC imc;
-  Resultado({required this.imc});
+  const Resultado({super.key, required this.imc});
 
   @override
   _ResultadoState createState() => _ResultadoState(imc: imc);
@@ -35,7 +35,6 @@ class _ResultadoState extends State<Resultado> {
       case FaixaIMC.ObesidadeIII:
         _corBorda = Colors.deepPurple;
         break;
-      case null:
     }
   }
 
@@ -48,7 +47,7 @@ class _ResultadoState extends State<Resultado> {
       body: SingleChildScrollView(
         child: Center(
           child: Container(
-            height: 80,
+            height: MediaQuery.of(context).size.height*0.8,
             margin: const EdgeInsets.all(20),
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
@@ -59,8 +58,28 @@ class _ResultadoState extends State<Resultado> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsets.all(0),
-                  child: Text(_imc.calcImc.toStringAsPrecision(3)))
+                  padding: const EdgeInsets.all(0),
+                  child: Text(_imc.calcImc.toStringAsPrecision(3),
+                  style: TextStyle(fontSize: 90, color: _corBorda),)),
+                  Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Text(
+                          'Classificação:',
+                          style: TextStyle(fontSize: 16, color: _corBorda),
+                        )),
+                  Padding(
+                        padding: const EdgeInsets.all(0),
+                        child: Text(
+                          '${_imc.faixa.descricao}',
+                          style: TextStyle(fontSize: 20, color: _corBorda),
+                        )),
+                  const Padding(
+                        padding: EdgeInsets.only(top: 30),
+                        child: Text(
+                            'O seu IMC indica se você possui o peso ideal, se '
+                            'está acima ou abaixo do peso. Lembre-se que uma boa alimentação '
+                            'e exercícios físicos regulares são fundamentais para '
+                            'manter uma boa saúde. '))
               ],
             ),
           ),
@@ -68,5 +87,4 @@ class _ResultadoState extends State<Resultado> {
       )
     );
   }
-
 }

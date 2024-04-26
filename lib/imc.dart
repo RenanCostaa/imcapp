@@ -10,7 +10,7 @@ class IMC {
     return peso / pow(altura, 2);
   }
 
-  FaixaIMC? get faixa {
+  FaixaIMC get faixa {
     double valueIMC = calcImc;
 
     if (valueIMC < 18.6) {
@@ -28,11 +28,9 @@ class IMC {
     if (valueIMC >= 34.9 && valueIMC < 39.9) {
       return FaixaIMC.ObesidadeII;
     }
-    if (valueIMC >= 40) {
+    else {
       return FaixaIMC.ObesidadeIII;
     }
-
-    return null;
   }
 }
 
