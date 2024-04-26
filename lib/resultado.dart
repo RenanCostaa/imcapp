@@ -79,7 +79,23 @@ class _ResultadoState extends State<Resultado> {
                             'O seu IMC indica se você possui o peso ideal, se '
                             'está acima ou abaixo do peso. Lembre-se que uma boa alimentação '
                             'e exercícios físicos regulares são fundamentais para '
-                            'manter uma boa saúde. '))
+                            'manter uma boa saúde. ',style: TextStyle(fontSize: 14)),),
+                  Padding(
+                    padding: const EdgeInsets.all(0),
+                    child: Container(
+                      margin: const EdgeInsets.only(top: 25),
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.lightBlue),
+                        borderRadius: const BorderRadius.all(Radius.circular(10)),
+                        color: Colors.lightBlue.withOpacity(0.2),
+                      ),
+                      child: Text(
+                        _imc.idealImc,
+                        style: const TextStyle(fontSize: 20, color: Colors.blue),
+                      ),
+                    ),
+                  )
               ],
             ),
           ),

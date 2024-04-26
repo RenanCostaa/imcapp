@@ -10,6 +10,10 @@ class IMC {
     return peso / pow(altura, 2);
   }
 
+  String get idealImc {
+    return 'Seu peso ideal é entre ${(pow(altura, 2) * 18.6).toStringAsPrecision(3) } Kg e ${(pow(altura, 2) * 24.9).toStringAsPrecision(3)} Kg';
+  }
+
   FaixaIMC get faixa {
     double valueIMC = calcImc;
 
